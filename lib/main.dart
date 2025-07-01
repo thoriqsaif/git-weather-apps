@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => WeatherApp(),
         // '/details': (context) => DetailsScreen(),
+        // nambahin sesuatu;
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/details') {

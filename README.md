@@ -1,10 +1,7 @@
 # latihan_packages
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
+Weather App Basic sebagai tugas pertama,
+branch utama berisi file home dari weather app
 
 A few resources to get you started if this is your first Flutter project:
 

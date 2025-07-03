@@ -141,7 +141,7 @@ class CustomWeatherCard extends StatelessWidget {
   final String cuaca;
   final dynamic celcius;
   final Color color;
-  final ElevatedButton button;
+  final VoidCallback onPressed;
   // final VoidCallback? onTap;
 
   const CustomWeatherCard({
@@ -150,7 +150,7 @@ class CustomWeatherCard extends StatelessWidget {
     required this.cuaca,
     required this.celcius,
     required this.color,
-    required this.button,
+    required this.onPressed,
     // this.onTap,
     super.key,
   });
@@ -210,22 +210,22 @@ class CustomWeatherCard extends StatelessWidget {
                 '$celcius°C',
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 58, 112, 183),
                 ),
-                onPressed: () {
-                  // if (onTap != null) {
-                  //   onTap!();
-                  // }
-                },
-                child: Text('Detail'),
+                onPressed: onPressed,
+                child: Text('Detail', style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
         ),
       ),
     );
+    // if (onTap != null) {
+    //   onTap!();
+    // }
   }
 }
 
@@ -280,18 +280,15 @@ class MobileLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 238, 143, 1),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Jakarta, Cerah, 30°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Jakarta, Cerah, 30°C'),
+              ),
+            );
+          },
         ),
         CustomWeatherCard(
           title: 'Bandung',
@@ -302,18 +299,15 @@ class MobileLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 38, 222, 255),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Bandung, Hujan Badai, 17°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Bandung, Hujan Badai, 17°C'),
+              ),
+            );
+          },
         ),
       ],
     );
@@ -340,18 +334,15 @@ class TabletLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 127, 200, 248),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Yogyakarta, Mendung, 27°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Yogyakarta, Mendung, 27°C'),
+              ),
+            );
+          },
         ),
         CustomWeatherCard(
           title: 'Surabaya',
@@ -362,18 +353,15 @@ class TabletLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 250, 13, 84),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Surabaya, Badai Petir, 24°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Surabaya, Badai Petir, 24°C'),
+              ),
+            );
+          },
         ),
       ],
     );
@@ -400,18 +388,15 @@ class DesktopLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 238, 143, 1),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Jakarta, Cerah, 30°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Jakarta, Cerah, 30°C'),
+              ),
+            );
+          },
         ),
         CustomWeatherCard(
           title: 'Bandung',
@@ -422,18 +407,15 @@ class DesktopLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 38, 222, 255),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Bandung, Hujan Badai, 17°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Bandung, Hujan Badai, 17°C'),
+              ),
+            );
+          },
         ),
         CustomWeatherCard(
           title: 'Yogyakarta',
@@ -444,18 +426,15 @@ class DesktopLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 127, 200, 248),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Yogyakarta, Mendung, 27°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Yogyakarta, Mendung, 27°C'),
+              ),
+            );
+          },
         ),
         CustomWeatherCard(
           title: 'Surabaya',
@@ -466,18 +445,15 @@ class DesktopLayout extends StatelessWidget {
             color: const Color.fromARGB(255, 250, 13, 84),
           ),
           color: const Color.fromARGB(255, 255, 255, 255),
-          button: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailScreen(message: 'Surabaya, Badai Petir, 24°C'),
-                ),
-              );
-            },
-            child: Text('Move to Detail'),
-          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(message: 'Surabaya, Badai Petir, 24°C'),
+              ),
+            );
+          },
         ),
       ],
     );
